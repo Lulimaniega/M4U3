@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel 2021</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/hotel.css">
+</head>
+
+<body>
+    <header>
+        <div class="holder">
+
+            <h1>Hotel El Descanso</h1>
+        </div>
+    </header>
+    <nav>
+        <ul class="holder">
+            <li><a class="{{#if isHome}}activo {{/if}}" href="/">Home</a></li>
+            <li><a class="{{#if isNosotros}}activo {{/if}}" href="/nosotros">Nosotros</a></li>
+            <li><a class="{{#if isGaleria}}activo {{/if}}" href="/galeria">Galeria</a></li>
+            <li><a class="{{#if isContacto}}activo {{/if}}" href="/contacto">Contacto</a></li>
+
+
+        </ul>
+
+    </nav>
+    <div class="homeimg"><img src="images/img home.jpg" class="img-fluid" alt="img" height="500px">
+    </div>
+    {{{body}}}
+  <footer>
+        <p>Diseñado por María Lourdes Maniega- &copy;año 2021 </p>
+
+    </footer>
+</body>
+
+</html>

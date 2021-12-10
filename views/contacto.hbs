@@ -1,0 +1,37 @@
+<main class="holder">
+      <div class="columna left">
+          <h2>Contacto Rápido</h2>
+          <form action="/contacto" method="post" class="formulario">
+              <p>
+                  <label for="">Nombre</label>
+                  <input type="text" name="nombre">
+              </p>
+              <p><label for="">Email</label>
+                 <input type="text" name="email" id="">            </p>
+              <p>
+                  <label for="">Teléfono</label>
+                <input type="text" name="tel"> </p>
+          <p><label for="">Comentarios</label>
+            <input type="text" name="comentarios">
+        </p>   
+        <p class="acciones"><input type="submit" value="Enviar"/p>         
+           </form>
+           {{#if message}}
+           <p>{{message}}</p>
+           {{/if}}
+      </div>
+      <div class="columna right">
+          <h2>Otras vías de contacto</h2>
+          <p>También se pueden comunicar con nosotros...</p>
+          <ul>
+              <li>Teléfono: 4666 0222</li>
+              <li>Email: hoteleldescanso@gmail.com</li>
+              <li>Facebook: El Descanso Hotel</li>
+              <li>Instagram: El Descanso Hotel</li>
+          </ul>
+      </div>
+
+
+
+
+    </main>
