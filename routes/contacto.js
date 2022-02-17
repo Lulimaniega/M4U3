@@ -22,8 +22,8 @@ router.post('/', async (req, res, next) =>{
   console.log(req.body);
 
   var obj = {
-    to: 'maniegaluli@gmail.com
-    subject: 'Contacto desde la web'
+    to: 'maniegaluli@gmail.com',
+    subject: 'Contacto desde la web',
     html: nombre + "se contacto a traves y quiere mas info a este correo: " + email + ". <br> Además, hizo el siguiente comentario:  " + comentarios + ". <br> Su tel es " + telefono
   }
 
@@ -38,8 +38,8 @@ router.post('/', async (req, res, next) =>{
   var info = await transporter.sendMail(obj);
 
   res.render('contacto', {
-    isContacto: true
-    message: 'Mensaje enviado correctamente'
+    isContacto: true,
+    message: 'Mensaje enviado correctamente',
   });
 
 });
