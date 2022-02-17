@@ -10,6 +10,8 @@ var indexRouter = require('./routes/index');
 var nosotrosRouter = require('./routes/nosotros');
 var galeriaRouter = require('./routes/galeria');
 var contactoRouter = require('./routes/contacto');
+var loginRouter = require('./routes/admin/login');
+
 
 
 var app = express();
@@ -17,6 +19,44 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+// select
+pool.query('SELECT * from empleados').then(function (results) {
+  console.log(results)
+});
+
+//insert
+
+var obj={
+  nombre: 'Lourdes',
+  apellido: 'Maniega',
+  trabajo: 'Dev',
+  edad: '15',
+  salario: '20000',
+  mail: 'lourdes@mail.com'
+} // JSON
+
+pool.query('insert into empleados set ?', [obj]).then(function (results) {
+console.log(results)
+});
+
+//update
+//var id=1;
+//var obj={
+//  nombre:
+//  apellido:
+//}
+
+//pool.query('update empleados set ? where id_emp?',[obj,id]).then(function (results) {
+//console.log(results)
+//});
+
+//delete
+// var id = 26;
+// pool.query('delete from empleados where id_emp=?', [id]).then(function (results) {
+//   console.log(results);
+// });
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -28,6 +68,7 @@ app.use('/', indexRouter);
 app.use('/nosotros', nosotrosRouter);
 app.use('/galeria', galeriaRouter);
 app.use('/contacto', contactoRouter);
+app.use('/admin/login', loginRouter);
 
 
 
